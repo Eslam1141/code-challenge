@@ -24,7 +24,7 @@ pipeline {
         stage('Unit Test') {
             when { equals expected: 'release', actual: 'release' }		 
             steps {
-                echo 'Testing..'
+                echo 'Testing...'
                 
 		          
             }
