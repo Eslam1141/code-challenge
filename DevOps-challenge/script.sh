@@ -1,12 +1,13 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "$GIT_BRANCH"
-if [ "$GIT_BRANCH" == "origin/master" ]
-	then
-		#deploy on master
+if "$GIT_BRANCH" == "origin/master";
+then 
+echo "deploy on master";
 fi
 
-if [ "$GIT_BRANCH" == "origin/dev" ]
+
+if  "$GIT_BRANCH" == "origin/dev" ;
 	then
         #workDir
         cd DevOps-challenge
@@ -18,6 +19,6 @@ if [ "$GIT_BRANCH" == "origin/dev" ]
         kubectl set image deployment/hello-python hello-python=eslam14/fly365:PythonApp-$BUILD_NUMBER
 		#kubectl apply -f pythonDeployment.yaml     
      else
-        echo "the branch is not spcified"
-        
+        echo "the branch is not spcified";
+    
 fi
